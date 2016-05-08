@@ -1,0 +1,39 @@
+<?php  namespace Faiverson\Merchant;
+
+use Illuminate\Foundation\Application;
+use InvalidArgumentException;
+
+class MerchantManager
+{
+    /**
+     * Create a new connection factory instance.
+     *
+     * @param  \Illuminate\Contracts\Container\Container  $container
+     * @return void
+     */
+    public function __construct(Application $app)
+    {
+		$handler = $app['config']->get('merchants.handler');
+        $this->handler = $handler;
+		$this->config = $app['config']->get("merchants.{$handler}");
+    }
+
+	public function merchant()
+	{
+		switch ($this->handler) {
+			case 'nmi':
+				return new NMIHandler($this->config['username'], $this->config['username']);
+
+//			case 'pgsql':
+//				return new PostgresConnection($connection, $database, $prefix, $config);
+//
+//			case 'sqlite':
+//				return new SQLiteConnection($connection, $database, $prefix, $config);
+//
+//			case 'sqlsrv':
+//				return new SqlServerConnection($connection, $database, $prefix, $config);
+		}
+
+		throw new InvalidArgumentException("Unsupported merchant [$this->handler]");
+	}
+}

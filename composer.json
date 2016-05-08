@@ -1,0 +1,25 @@
+{
+    "name": "faiverson/merchants",
+    "description": "Using a merchant handler to use",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Fabian Torres",
+            "email": "fa.iverson@gmail.com"
+        }
+    ],
+    "require": {
+		"php": ">=5.6.0",
+		"anlutro/curl": "^1.4",
+      	"illuminate/support": "~5.2",
+      	"illuminate/config": "~5.2",
+      	"illuminate/console": "~5.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Faiverson\\Merchant\\": "src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
