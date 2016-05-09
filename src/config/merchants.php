@@ -4,10 +4,10 @@ return array(
 
 	/*
 	|--------------------------------------------------------------------------
-	| Services settings
+	| Merchant settings
 	|--------------------------------------------------------------------------
 	|
-	| Service specific settings.
+	| Select your merchant and set the credentials
 	|
 	*/
 	'handler'          => env('MERCHANT_HANDLER', 'nmi'),
@@ -15,6 +15,10 @@ return array(
 	'nmi' => array(
 		'username' => env('NMI_LOGIN', 'demo'),
 		'password' => env('NMI_PASSWORD', 'password')
+	),
+
+	'stripe' => array(
+		'key' => env('STRIPE_KEY', 'demo')
 	),
 
 );

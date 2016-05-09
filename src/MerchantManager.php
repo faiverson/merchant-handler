@@ -24,14 +24,8 @@ class MerchantManager
 			case 'nmi':
 				return new NMIHandler($this->config['username'], $this->config['username']);
 
-//			case 'pgsql':
-//				return new PostgresConnection($connection, $database, $prefix, $config);
-//
-//			case 'sqlite':
-//				return new SQLiteConnection($connection, $database, $prefix, $config);
-//
-//			case 'sqlsrv':
-//				return new SqlServerConnection($connection, $database, $prefix, $config);
+			case 'stripe':
+				return new StripeHandler($this->config['key']);
 		}
 
 		throw new InvalidArgumentException("Unsupported merchant [$this->handler]");

@@ -1,6 +1,6 @@
 {
     "name": "faiverson/merchants",
-    "description": "Using a merchant handler to use",
+    "description": "Using a merchant handler to use with laravel",
     "license": "MIT",
     "authors": [
         {
@@ -13,7 +13,8 @@
 		"anlutro/curl": "^1.4",
       	"illuminate/support": "~5.2",
       	"illuminate/config": "~5.2",
-      	"illuminate/console": "~5.2"
+      	"illuminate/console": "~5.2",
+		"stripe/stripe-php": "3.*"
     },
     "autoload": {
         "psr-4": {
